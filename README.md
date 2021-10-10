@@ -1,2 +1,2 @@
 # Java
-Java concepts
+Java concepts that I'm learning at my University course.
