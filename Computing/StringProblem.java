@@ -55,3 +55,50 @@ public class StringDemo {
 /* Output */
 
 // I'm Giovanny Hernandez Nice to meet you !
+
+
+
+/* Excersize */
+
+
+public class StringDemo {
+    public static void main(String[] args) {
+
+        String message = "Welcome to Java";
+        String s1 = message.concat(" Programming");
+
+        // concatenation using the + operator
+
+        // s2 = Welcome to Java Programming
+        String s2 = message + " Programming";
+
+        // message = Welcome to Java Programming
+        message += " Programming"; // add "Programming"
+        message = " version "; // add "verson"
+        message += 1 + 2; // message = version 3 (add version 3)
+        // message = version 12
+        message = message + 1 + 2; // add "12"
+
+        System.out.print(s1 + message);
+    }
+}
+
+
+/* Output */
+
+// 'Welcome to Java Programming version 312"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
