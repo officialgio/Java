@@ -29,3 +29,40 @@ public class StringDemo {
       
     }
 }
+
+public class StringDemo {
+    public static void main(String[] args) {
+
+//        //The method printf() is used to display formatted output.
+//        double doubleAmount = 103.45783;
+//        System.out.printf("%f \t %.2f \t %.7f\n", doubleAmount,
+//                doubleAmount,
+//                doubleAmount);
+
+        boolean boolValue = true;
+        int intValue = 7;
+        byte byteValue = 10;
+        char charValue = 'A';
+        float floatValue = (float) 197.145;
+        double doubleValue = 197.145;
+        String s = "Welcome to Java";
+        System.out.printf("boolean value: %b \n"
+        + "integer value: %d \n"
+        + "byte value: %d \n"
+        + "character value: %c\n"
+        + "float value: %.2f \n"
+        + "double value: %.3f\n"
+        + "string value: %s \n",
+        boolValue, intValue, byteValue,
+                charValue, floatValue, doubleValue, s);
+    }
+}
+
+output
+boolean value: true 
+integer value: 7 
+byte value: 10 
+character value: A
+float value: 197.15 
+double value: 197.145
+string value: Welcome to Java 
