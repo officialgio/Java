@@ -58,7 +58,7 @@ public class StringDemo {
     }
 }
 
-output
+/* Output */
 boolean value: true 
 integer value: 7 
 byte value: 10 
