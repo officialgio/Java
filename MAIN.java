@@ -1,7 +1,7 @@
-/*       Main       */
 package ScannerExample;
 import org.w3c.dom.ls.LSOutput;
 
+import java.sql.SQLOutput;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.Random;
@@ -349,6 +349,7 @@ class ConvertPractice {
         float floatVal = 33.33F;
         String s = floatVal + "";
         System.out.println(floatVal);
+
     }
 }
 
@@ -417,6 +418,27 @@ class HandlingStrings {
         System.out.printf("\n %d \t %d \t %d \n", intConvert, intConvert2, intConvert3);
     }
 }
+
+//Demo
+class HandlingStrings2 {
+    public static void main(String[] args) {
+        Scanner dInpit2 = new Scanner(System.in);
+
+        System.out.print("Enter a String: ");
+        System.out.println("The first string entered is: " + dInpit2.nextLine());
+
+        //char
+        char ch = 'A';
+        Scanner charInput = new Scanner(String.valueOf(ch));
+        System.out.println("THe char entered is: " + charInput.next());
+    }
+}
+
+
+
+
+
+
 
 class ComparingStrings {
     public static void main(String[] args) {
@@ -594,6 +616,20 @@ class Review {
     }
 }
 
+//Basic Understanding
+class THeWhileLoop {
+    public static void main(String[] args) {
+        int count = 0;
+        //While count is less than or equal to 20
+        //loop 20 times
+        //ONLY TRUE!
+        while (count <= 20) {
+            System.out.println("Count " + count);
+            count++;
+        }
+    }
+}
+
 //The While Loop
 class WhileLoop {
     public static void main(String[] args) {
@@ -601,10 +637,485 @@ class WhileLoop {
         final int LIMIT = 5;
         while (ii <= LIMIT) {
             sum += ii++; // same as sum = sum + ii; ii++;
+            System.out.println("ii: " + sum);
+
         }
         System.out.println("The sum of integers from 1 to "
 
                 + LIMIT + " is " + sum);
+    }
+    /*
+
+    ii increases by one when adding "ii++"
+    sum is being added by "ii++"
+        sum = 0
+        sum = 1 = 1 +1
+        sum = 1 + 1 + 1 = 3  +2
+        sum = 1 + 1 + 1 + 1 + 1 + 1 = 6 +3
+        sum = 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 +1 = 10 +4 ...
+
+    */
+
+}
+
+//Compute the average of the entered positive numbers, terminate if input = 0
+class addNumbers {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int sum = 0, count = 0;
+        boolean condition = true;
+
+        while (condition) {
+            System.out.println("Enter a positive integer, 0 to exit: ");
+            int intValue = input.nextInt(); // reads only as int
+            if (intValue > 0) { // input has to be greater than 0
+                sum += intValue; // the inputs will be added into sum (accumulation)
+                count++; // increase count && keep track of the inputs
+            }
+            else if (intValue < 0) { // if pressed 0
+                System.out.println("Invalid input, Try again. ");
+            }
+            else { // otherwise is false
+                condition = false;
+            }
+        }
+
+        System.out.println("The sum of the " + count + " entered positive integers is " + sum);
+        System.out.printf("The average value of the entered numbers is %.3f\n" + (double)sum / count);
+    }
+}
+
+//Example
+class AddNumbersDemo {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int sumOdd = 0, countOdd = 0, sumEven = 0, countEven = 0;
+        int intValue;
+        boolean condition = true;
+        while (condition) {
+            System.out.print("Enter a positive integer, 0 to exit: ");
+            intValue = input.nextInt(); // reads input as int
+            if (intValue > 0) { // only if the in the value is > 0 execute the following...
+                if (intValue % 2 == 0) {
+                    sumEven += intValue; // add the inputs by the inputs
+                    countEven++; // keep track of the inputs
+                } // entered even number
+                else {
+                    sumOdd += intValue; // add
+                    countOdd++; // keep track
+                } // entered odd number
+            } else if (intValue < 0) {
+                System.out.println("Invalid input. Try again. ");
+            } else {
+                condition = false;
+            }
+        }
+        System.out.println("The sum of the " + countEven + " entered positive even integers is " + sumEven);
+        System.out.println("The sum of the " + countOdd + " entered positive odd integers is " + sumOdd);
+
+    }
+}
+
+
+class addDemo {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int sum = 0, count = 0, nInput;
+        boolean condition = true;
+
+        while(condition) {
+            System.out.print("Enter a positive integer or Press 0 to exit: " );
+            nInput = input.nextInt(); // reads as int
+            if (nInput > 0) {
+                sum += nInput;
+                count++;
+            } else if (nInput < 0) {
+                System.out.print("Invalid output, Please try again ");
+            } else {
+                condition = false;
+            }
+        }
+        System.out.println("The sum of the " + count + " entered positive integers is: " + sum);
+    }
+}
+
+// Do While Loop starter
+class DoWhileLoopStarter {
+    public static void main (String[] args) {
+
+        // do only executes only once
+        int count = 21;
+
+        do {
+            System.out.println(count);
+            count++;
+        }
+        while (count <= 20);
+    }
+}
+
+class DoWhileLoop {
+    public static void main(String[] args) {
+        int ii = 1, sum =0;
+        final int LIMIT = 5;
+
+        // do while loop executes once regardless of the condition
+        // only use it if you want to execute once
+        do {
+            sum += ii++;
+        } while (ii <= LIMIT);
+        System.out.println("The sum of th integers from 1 to " + LIMIT + " is " + sum);
+    }
+}
+
+class ForLoops {
+    public static void main(String[] args) {
+
+      int sum = 0;
+      final int LIMIT = 5;
+    // ii is declared and initialized at the same time
+    // it is a good practice to do so if ii is used only
+    // in the loop
+      for (int ii = 1; ii < LIMIT; ii++) {
+          sum += ii;
+          System.out.println(ii);
+      }
+    }
+}
+
+class ForLoops2 {
+    public static void main(String[] args) {
+
+        int sum = 0;
+        for (int ii = 0, jj = 5; ii < 100 ; ii++, jj+=5) {
+            sum += (ii + jj);
+            System.out.println(ii); // ii = 99 //  jj = 500
+
+            // ii iterates bby ones, and jj iterates by fives
+        }
+    }
+}
+
+/* Difference */
+//class ForLoopsVsWhileLoops {
+//    public static void main(String[] args) {
+//
+//        // this for loop is equivalent to the following while loop
+//        for ( ; loop-continuation-condition ; ) {
+//            // loop body: DO something
+//        }
+//
+//        while (loop-continuation-condition) {
+//            // loop body: DO something
+//        }
+//    }
+//}
+
+class MultiplicationTable {
+    public static void main(String[] args) {
+
+        System.out.println("               Multiplication Table");
+        System.out.print("    ");
+
+        //print the first row
+        for (int jj = 1; jj <= 9; jj++) {
+            System.out.print("    " + jj);
+        }
+        System.out.println("\n-----------------------------------------");
+        //display the table
+        for (int ii = 1; ii <= 9; ii++) {
+            System.out.println(ii + " | ");
+            for (int jj = 1; jj <= 9; jj++) {
+                System.out.printf("%8d", ii * jj);
+            }
+            System.out.println();
+        }
+    }
+}
+
+//Starter
+class NestedLoopExcersize {
+    public static void main(String[] args) {
+
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 2; j++) {
+                System.out.println(i + " " + j);
+            }
+            System.out.println();
+        }
+    }
+    //   output
+
+//        0 0
+//        0 1
+//
+//        1 0
+//        1 1
+//
+//        2 0
+//        2 1
+}
+
+class NestedLoopExcersize2 {
+    public static void main(String[] args) {
+        for(int i = 1; i <= 5; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+    /*              Output
+
+                     *
+                     **
+                     ***
+                     ****
+                     *****
+
+
+    */
+}
+
+//same thing
+class NestedloopExcersize3 {
+    public static void main(String[] args) {
+        for (int i = 1; i < 10; i++) {
+            for (int j = 1; j <= i; j++ ) {
+                System.out.print("?");
+            }
+            System.out.println();
+        }
+    }
+}
+
+//Using while loop to predict salaries
+class PredictingSalary {
+    public static void main(String[] args) {
+        double employeeeSalary = 50000; // starting salary
+        int year = 0; // initialize year
+
+        // In how many years will the salary will be doubled??
+        while (employeeeSalary < 100000) { // 50000 is less than 100000 so this is executed until it's over 100000
+            employeeeSalary *= 1.05; // the salary increases by 5% yearly
+            year++; // increase year for each execution
+        }
+        System.out.println("Salary will be double in " + year + " years.");
+        System.out.printf("Salary will be $%.2f in %d years",employeeeSalary, year);
+    }
+}
+
+// Keywords beak and continue
+
+class ContinueKeyWord {
+    public static void main(String[] args) {
+
+        // if it's an even num then continue to the outer loop
+        // and ignore the rest of the body and do the change "i++"
+        // if it's an odd number then the if statement won't run
+        // and it will print i " "
+        for (int i = 0; i <= 10; i++ ) {
+            if (i % 2 == 0)
+                continue;
+                System.out.print(i + " ");
+
+        }
+    }
+}
+
+//Guide
+class ContinueAndBreakKeywords {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int n;
+        while (true) {
+            System.out.print("Enter a number between 1 and 10: ");
+            n = input.nextInt();
+
+            if ( n < 1 || n > 10) // if it's not between 1 and 10
+                continue; // continue with the loop and skip the rest of the body or what's below
+                System.out.println(n + " is between 1 and 10 ");
+                break; // if is between 1 and 10 ends the while loop or exit the loop
+        }
+    }
+}
+
+
+class ContinueAndBreakKeywords2 {
+    public static void main (String[] args) {
+        int sum = 0, number = 0;
+        while (number < 20) {
+            number++;
+            if (number == 10 || number == 11)
+                continue; // exclude remaining part of the loop and go to next iteration
+
+            sum += number;
+        }
+        System.out.println("The sum is " + sum);
+    }
+}
+
+class ContinueAndBreakKeywords3 {
+    public static void main(String[] args) {
+
+
+        /* Understanding the % operator (Review)
+        10 / 2 gives 5 with 0 remainder
+        (10 is even)
+        13/2  gives 6 with 1 remainder(odd)
+        */
+
+        int factor = 2, n = 10;
+        while (factor <= n) {
+            if (n % factor == 0)
+                break;
+
+            factor++;
+        }
+        System.out.println("The smallest factor other than 1 for " + n + " is " + factor);
+    }
+}
+
+//Compute the average of the entered positive even/odd numbers,
+class ComputerAverageOfPositiveAndOddNums {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        //initialize variables
+        int sumOdd = 0, countOdd = 0, sumEven = 0, countEven = 0;
+        int intValue;
+
+        while (true) {  // infinite loop and can only be terminated by "break" keyword
+            System.out.print("Enter a positive integer, 0 to exit:  ");
+            intValue = input.nextInt();
+
+            if (intValue > 0) { // executes only once is 0
+                if (intValue % 2 == 0) { // divides by 2 and if the remainder is 0 then is even
+                    sumEven += intValue; // your input is being added to the sumEven (accumulate the sum)
+                    countEven++; // track your number of inputs
+                } else {
+                    sumOdd += intValue;
+                    countOdd++;
+                }
+            }
+            else if (intValue < 0) { // less than 0
+                System.out.println("Invalid input. Try again.");
+            }
+            else {
+                break; // terminate the loops once is 0
+            }
+
+            System.out.println("The sum of the " + countEven + " entered positive even integers is " + sumEven);
+            System.out.println("The sum of the " + countOdd + " entered odd even integers is " + sumOdd);
+
+        }
+    }
+}
+
+//This is the old way
+//class ArraysDont {
+//    public static void main(String[] args) {
+//        Scanner input = new Scanner(System.in);
+//        int a, b, c, d, e, f, g, h, i, j;
+//
+//        System.out.println("Enter 10 integers: ");
+//        a = input.nextInt();
+//        b = input.nextInt();
+//        c = input.nextInt();
+//        d = input.nextInt();
+//        e = input.nextInt();
+//        f = input.nextInt();
+//        g = input.nextInt();
+//        h = input.nextInt();
+//        i = input.nextInt();
+//        j = input.nextInt();
+//
+//        double avgValue = (a + b + c + d + e + f + g + h + i + j) / 10.0;
+//        System.out.println(avgValue);
+//    }
+//}
+
+class Array {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int[] arr = new int[10]; //length of arr is 10
+        // elements of arr are initialize to 0.
+        int sum = 0;
+
+        System.out.print("Enter 10 integers: ");
+
+        /*
+        assume you input [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+        arr[ii] = 0 -> 1 which is then added to sum
+        arr[ii] is then incremented by 1 and we have arr[1] = 2
+        so is then added to sum: sum(1) + 2 = 3 and so for
+
+        sum = arr[0] + arr[1] + arr[2] + arr[3]...
+        * */
+        for (int ii = 0; ii < 10; ii++) {
+           arr[ii] = input.nextInt();
+           sum += arr[ii];
+        }
+        double avgValue = sum / 10.0; // return a double value
+        System.out.println(avgValue);
+    }
+}
+
+// Array of characters
+class Arrays {
+    public static void main(String[] args) {
+        final int SIZE = 15; // declare a constant
+//        char charArray[]; // array declaration (a reference to an array is created, no data yet)
+        char[] charArray = new char[SIZE]; // ideal method
+        //charArray = new char[SIZE]; // 15 characters of memory are allocated and referenced by charArray
+        // characters are initialized to 0000...
+        for (int ii = 0; ii < SIZE; ii++) {
+            charArray[ii] = (char) (Math.random() * 26 + 65);
+        }
+        System.out.println(charArray);
+    }
+}
+
+// Numeric ypes of arrays
+class NumericArrays {
+    public static void main(String[] args) {
+        // Double Arrau
+        double doubleArray[] = {2.1, -5.1, 3.7, 0, 2.8}; // declaration and assignment
+        //Float Array
+        float floatArray[] = {2.1f, -5.1f, 3.7f, 0f, 2.8f};
+        //Boolean Arrray
+        boolean boolArray[] = {true, true, false, false};
+        //Integer Array
+        int intArray[] = {3, 1, -20, 7, 10, 7};
+        //Byte Array
+        byte byteArray[] = {0, 12, -7, 127};
+
+        // print arrays and reference to one another by multiplying etc..
+        System.out.println(intArray[0]); // print the first element of intArray[] // 3
+
+        System.out.println(intArray[1] * 10); // print the second element of inArray[] multiplied by 10 // 10
+
+        System.out.printf("%.3f\n", doubleArray[2] - intArray[0]); // 0.700
+
+        doubleArray[1] *= 2; // multiply the second element of doubleArray[] by 2
+    }
+}
+
+class PracticeArrays {
+    public static void main(String[] args) {
+        int arr[] = {1, 2, 3, 4, 5}; // store elemts in a int array
+        char charArray[] = {'w', 'e', 'l', 'c', 'o', 'm', 'e'}; // store elements in a char array
+
+
+        System.out.printf("The first index of the array is : " + arr[1]); //2
+
+        System.out.println(charArray[2]);
+//        System.out.printf("\n\t\t %d \n", arr[4]);
+
+        double doubleArray[] = new double[8]; // create a double array of 8 elements {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0}
+
+        int intArray[] = new int[8]; // create a int array of 8 elements {0, 0, 0, 0, 0, 0, 0, 0}
     }
 }
 
@@ -617,12 +1128,40 @@ class WhileLoop {
 
 
 
+//Review
+//class Review3 {
+//    public static void main(String[] args) {
+//
+//        String s1 = "555 754 543";
+//        String s2 = "4334 443 4444";
+//        Scanner input = new Scanner(s1);
+//
+//        System.out.print("------------------------ \n");
+//        System.out.printf("\t String Format \n");
+//
+//        System.out.println("The first number is: " + input.next());
+//        System.out.println("The secoond number is: " + input.next());
+//        System.out.println("The third number is: " + input.next());
+//
+//
+//        Scanner numInput = new Scanner(s2);
+//        int num1 = Integer.parseInt(numInput.next());
+//        int num2 = Integer.parseInt(numInput.next());
+//        int num3 = Integer.parseInt(numInput.next());
+//
+//        System.out.print("------------------------ \n");
+//        System.out.printf("\t Integer Format \n");
+//        System.out.printf("The first int is: %d \nThe second int is: %d \nThe third number is %d \n", num1, num2, num3 );
+//
+//    }
+//}
 
 
+//Review here how to justify the output
+class JustifyingConsoleOutputPractice {
+    public static void main(String[] args) {
 
-
-
-
-
-
-
+        int intValue2 = 555, intValue3 = 444;
+        System.out.printf("%5d\n%4d\n", intValue2, intValue3);
+    }
+}
