@@ -4,7 +4,10 @@ mapBully({"a": "candy", "b": "dirt"}) → {"a": "", "b": "candy"}
 mapBully({"a": "candy"}) → {"a": "", "b": "candy"}
 mapBully({"a": "candy", "b": "carrot", "c": "meh"}) → {"a": "", "b": "candy", "c": "meh"}
 */
+
+// if your method doesn't have map already just include in on the body. Or in the Method.
 public Map<String, String> mapBully(Map<String, String> map) {
+  // Map<String, String> map = new HashMap
   if(map.containsKey("a")) {
     map.put("b", map.get("a"));
     map.put("a", "");
