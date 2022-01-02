@@ -39,3 +39,18 @@ class Solution {
         return count;
     }
 }
+
+// Another Method
+
+class Solution {
+    public int findNumbers(int[] nums) {
+        int count = 0;
+        
+        for (int i = 0; i < nums.length; i++) {
+            String str = String.valueOf(nums[i]);
+            count += str.length() % 2 == 0 ? 1 : 0;
+        }
+        
+        return count;
+    }
+}
