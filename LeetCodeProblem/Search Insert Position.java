@@ -29,7 +29,7 @@ class Solution {
             if (nums[midIndex] == target) {
                 return midIndex;
             } else if (nums[midIndex] > target) {
-                r = midIndex - 1;
+                r = midIndex - 1; // doesnt matter 
             } else {
                 l = midIndex + 1;
             }
@@ -37,6 +37,21 @@ class Solution {
         return l;   
     }
 }
+
+// //Test case Example
+// (0 + 5) / 2 = 2 (index)
+//     l = midIndex + 1; 
+// {1, 2, 3, 4, 5}
+//        ^ 
+//        (3 + 5) / 2 = 4 (index)
+//            {1, 2, 3, 4, 5, 6}
+//                            ^
+//                            return l(index 5);
+           
+
+
+
+// {1, 2, 3, 4, 5} target = 6
 
 //Test case Example
 (0 + 5) / 2 = 2 (index)
